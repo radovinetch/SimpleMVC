@@ -1,0 +1,22 @@
+{
+    "name": "radovinetch/simple-mvc",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Radovinetch\\SimpleMvc\\": "src/"
+        }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/radovinetch/SimpleORM"
+        }
+    ],
+    "authors": [
+        {
+            "name": "radovinetch",
+            "email": "radovinetch@gmail.com"
+        }
+    ],
+    "require": {}
+}
