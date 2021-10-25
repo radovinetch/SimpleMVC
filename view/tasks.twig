@@ -58,7 +58,7 @@
         </thead>
         <tbody>
         {% for task in pagination.getArray() %}
-            <tr>
+            <tr class="table-dark">
                 <th scope="row"> {{ task.getVar('id') }}</th>
                 <td> {{ task.getVar('username') }} </td>
                 <td>{{  task.getVar('email') }}</td>
@@ -71,6 +71,10 @@
                     <a class="text-decoration-none link-light" href="/tasks/delete/{{ task.getVar('id') }}"><i class="bi bi-trash-fill"></i></a>
                 </td>
                     {% endif %}
+                {% endif %}
+
+                {% if task.getVar('edited') == 1 %}
+                    <td>Отредактировано администратором</td>
                 {% endif %}
             </tr>
         {% endfor %}

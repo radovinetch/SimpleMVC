@@ -40,7 +40,7 @@ class TaskController extends Controller
         ]);
 
         if (!empty($validatorErrors)) {
-            $this->session->set('message', implode(PHP_EOL, $validatorErrors));
+            $this->session->set('message', implode(' ', $validatorErrors));
             $this->response->back();
             return;
         }
@@ -83,9 +83,24 @@ class TaskController extends Controller
 
     public function update($id): void
     {
+        $validatorErrors = Validator::validate($this->request, [
+            'text' => 'required|max:255|min:3',
+            'status' => 'required|int'
+        ]);
+
+        if (!empty($validatorErrors)) {
+            $this->session->set('message', implode(' ', $validatorErrors));
+            $this->response->back();
+            return;
+        }
+
         $model = Task::where(['id' => $id])->get();
         if ($model !== null) {
-            $model->update($this->request->postAll());
+            $postAll = $this->request->postAll();
+            if ($model->getVar('text') != $postAll['text']) {
+                $postAll['edited'] = 1;
+            }
+            $model->update($postAll);
         }
 
         $this->session->set('message', 'Успешно!');
