@@ -11,7 +11,12 @@ require_once __DIR__.'/../route.php';
 
 use SimpleMvc\routing\Routing;
 
+$script_name = str_ireplace('index.php', '', $_SERVER['SCRIPT_NAME']);
 $uri = $_SERVER['REQUEST_URI'];
+if ($script_name !== '/') {
+    $uri = preg_replace('#'.$script_name.'#', '', $uri);
+}
+
 $uri = str_ireplace('/public/', '', $uri);
 
 Routing::match($uri);

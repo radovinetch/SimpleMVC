@@ -65,7 +65,7 @@ final class Routing {
      */
     private static function register(string $method, string $route, string $exec, array $middleware = []): Route
     {
-        $route = rtrim($route, '/');
+        $route = trim($route, '/');
         $route = "#^" . preg_replace('/{([a-zA-Z0-9]+):([a-zA-Z0-9\\\+]+)}/', "(?P<$1>$2)", $route) . "$#i";
         return self::$instance->routes[] = new Route($method, $route, $exec, $middleware);
     }
@@ -80,7 +80,7 @@ final class Routing {
     public static function match(string $uri): void
     {
         $uri = preg_replace('/\\?.*/i', '', $uri);
-        $uri = rtrim($uri, '/');
+        $uri = trim($uri, '/');
 
         $routes = self::$instance->routes;
         foreach ($routes as $route) {
