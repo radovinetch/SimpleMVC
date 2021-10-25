@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    {{ include('base/header.twig') }}
+    <title>Edit task</title>
+</head>
+<body>
+<div class="container mt-3">
+    <h3>Задача #{{ model.getVar('id') }}</h3>
+    {% if session.message is not null %}
+    <div class="alert alert-success">{{ session.message }}</div>
+    {% endif %}
+    <form action="/tasks/update/{{ model.getVar('id') }}" method="post">
+        <div class="mb-3">
+            <div class="form-floating">
+                <textarea class="form-control" name="text" id="text">{{ model.getVar('text') }}</textarea>
+            </div>
+        </div>
+        <div class="mb-3">
+            <select class="form-select" name="status">
+                <option value="1" {{ model.getVar('status') == 1 ? 'selected' :  '' }}>Выполнено</option>
+                <option value="0" {{ model.getVar('status') == 0 ? 'selected' :  '' }}>Не выполнено</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Сохранить</button>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    {{ include('base/header.twig') }}
+    <title>Create task</title>
+</head>
+<body>
+<div class="container mt-3">
+    <h3>Создание задачи</h3>
+    {% if session.message is not null %}
+        <div class="alert alert-danger">{{ session.message }}</div>
+    {% endif %}
+    <form action="/tasks/create" method="post">
+        <div class="mb3">
+            <label for="username" class="form-label">Пользователь</label>
+            <input type="text" class="form-control" id="username" name="username" required>
+        </div>
+        <div class="mb3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="mb-3">
+            <label for="text">Текст задания</label>
+            <div class="form-floating">
+                <textarea class="form-control" name="text" id="text" required></textarea>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Сохранить</button>
+    </form>
+</div>
+</body>
+</html>

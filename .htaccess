@@ -1,0 +1,7 @@
+#В Apache проблема с безопасностью решается довольно просто
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{REQUEST_URI} !-d
+RewriteCond %{REQUEST_URI} !-l
+RewriteRule ^(.*)$ index.php [QSA,L]
+</IfModule>

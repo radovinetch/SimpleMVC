@@ -1,6 +1,6 @@
 <?php
 
-namespace src\loader;
+namespace SimpleMvc\loader;
 
 /**
  * Те действия, которые нужно выполнить во время загрузки приложения

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    {{ include('base/header.twig') }}
+    <title>Login</title>
+</head>
+<body>
+<div class="container mt-3">
+    {% if session.message is not null %}
+    <div class="alert alert-danger" role="alert">
+        {{ session.message }}
+    </div>
+    {% endif %}
+    <form method="post" action="/auth/login">
+        <div class="mb-3">
+            <label for="username" class="form-label">Логин</label><input type="text" class="form-control" id="username" name="username" required>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Пароль</label><input type="password" class="form-control" id="password" name="password" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Войти</button>
+    </form>
+</div>
+</body>
+</html>

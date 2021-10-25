@@ -3,13 +3,17 @@
     "type": "library",
     "autoload": {
         "psr-4": {
-            "Radovinetch\\SimpleMvc\\": "src/"
+            "SimpleMvc\\": "src/"
         }
+    },
+    "require": {
+        "radovinetch/simple-orm": "dev-master",
+        "twig/twig": "^3.0"
     },
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/radovinetch/SimpleORM"
+            "url": "https://github.com/radovinetch/simpleorm"
         }
     ],
     "authors": [
@@ -18,5 +22,12 @@
             "email": "radovinetch@gmail.com"
         }
     ],
-    "require": {}
+    "require-dev": {
+        "phpunit/phpunit": "9.5"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "SimpleMvc\\tests\\": "tests/phpunit"
+        }
+    }
 }

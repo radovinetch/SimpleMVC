@@ -1,18 +1,23 @@
 <?php
 
-namespace src;
+namespace SimpleMvc;
 
-use src\loader\ILoader;
-use src\loader\MainLoader;
+use SimpleMvc\loader\ILoader;
+use SimpleMvc\loader\MainLoader;
+use SimpleMvc\loader\MysqlLoader;
+use SimpleMvc\loader\TwigLoader;
 
 class Framework 
 {
     /** @var ILoader[] $loaders */
-    private $loaders = [];
+    private array $loaders = [];
 
     public function start(): void
     {
         $this->registerLoader(new MainLoader());
+        $this->registerLoader(new MysqlLoader());
+        $this->registerLoader(new TwigLoader());
+
         foreach ($this->loaders as $loader) {
             $loader->onLoad();
         }
