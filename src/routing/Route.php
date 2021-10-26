@@ -3,8 +3,6 @@
 
 namespace SimpleMvc\routing;
 
-use SimpleMvc\middleware\IMiddleware;
-
 class Route
 {
     private string $method;

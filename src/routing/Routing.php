@@ -9,7 +9,6 @@ use SimpleMvc\http\Request;
 use SimpleMvc\http\Response;
 use SimpleMvc\middleware\IMiddleware;
 use SimpleMvc\session\Session;
-use SimpleMvc\Utils;
 use SimpleMvc\view\View;
 
 final class Routing {

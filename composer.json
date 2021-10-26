@@ -7,8 +7,9 @@
         }
     },
     "require": {
-        "radovinetch/simple-orm": "dev-master",
-        "twig/twig": "^3.0"
+        "radovinetch/simple-orm": "dev-php7.4",
+        "twig/twig": "^3.0",
+        "ext-json": "*"
     },
     "repositories": [
         {

@@ -5,7 +5,6 @@ namespace SimpleMvc\loader;
 
 use SimpleMvc\model\User;
 use SimpleMvc\session\Session;
-use SimpleMvc\Utils;
 use SimpleMvc\view\View;
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader as TwigFilesystemLoader;

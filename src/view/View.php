@@ -12,7 +12,7 @@ final class View
     /**
      * @var Environment|null
      */
-    private static Environment |null $environment = null;
+    private static ?Environment $environment = null;
 
     /**
      * @param Environment|null $environment

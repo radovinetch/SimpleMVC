@@ -4,31 +4,30 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4b2daa24eea4220de3894f514d81d661",
+    "content-hash": "42350f01a8e4e9d2f13d2b0355e26d92",
     "packages": [
         {
             "name": "radovinetch/simple-orm",
-            "version": "dev-master",
+            "version": "dev-php7.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/radovinetch/SimpleORM.git",
-                "reference": "603b1268263db9ef5991537c4bbb17fd0fe4e0c7"
+                "reference": "895f78b34652c9d88812e8d4ea1b0ef5d7869f7d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/radovinetch/SimpleORM/zipball/603b1268263db9ef5991537c4bbb17fd0fe4e0c7",
-                "reference": "603b1268263db9ef5991537c4bbb17fd0fe4e0c7",
+                "url": "https://api.github.com/repos/radovinetch/SimpleORM/zipball/895f78b34652c9d88812e8d4ea1b0ef5d7869f7d",
+                "reference": "895f78b34652c9d88812e8d4ea1b0ef5d7869f7d",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "ext-pdo": "*",
-                "php": ">=8.0"
+                "php": ">=7.4"
             },
             "require-dev": {
                 "phpunit/phpunit": "9.5"
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -42,10 +41,10 @@
             },
             "description": "Secure and simple ORM for my projects. Say no to useless things!",
             "support": {
-                "source": "https://github.com/radovinetch/SimpleORM/tree/master",
+                "source": "https://github.com/radovinetch/SimpleORM/tree/php7.4",
                 "issues": "https://github.com/radovinetch/SimpleORM/issues"
             },
-            "time": "2021-10-25T03:01:38+00:00"
+            "time": "2021-10-26T01:34:17+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -2306,7 +2305,9 @@
     },
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "ext-json": "*"
+    },
     "platform-dev": [],
     "plugin-api-version": "2.1.0"
 }
