@@ -36,7 +36,7 @@ class TaskController extends Controller
         $validatorErrors = Validator::validate($this->request, [
             'username' => 'required|min:3|max:48',
             'email' => 'required|email',
-            'text' => 'required|max:255'
+            'text' => 'required|max:255|min:3',
         ]);
 
         if (!empty($validatorErrors)) {
