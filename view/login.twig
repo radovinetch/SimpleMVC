@@ -11,7 +11,7 @@
         {{ session.message }}
     </div>
     {% endif %}
-    <form method="post" action="/auth/login">
+    <form method="post" action="{{ appUri }}auth/login">
         <div class="mb-3">
             <label for="username" class="form-label">Логин</label><input type="text" class="form-control" id="username" name="username">
         </div>

@@ -12,6 +12,20 @@ use Twig\Loader\FilesystemLoader as TwigFilesystemLoader;
 
 class TwigLoader implements ILoader
 {
+    /**
+     * @var string
+     */
+    private $appUri;
+
+    /**
+     * TwigLoader constructor.
+     * @param string $appUri
+     */
+    public function __construct(string $appUri)
+    {
+        $this->appUri = $appUri;
+    }
+
     public function onLoad(): void
     {
         $loader = new TwigFilesystemLoader(VIEWS_DIR);
@@ -23,6 +37,7 @@ class TwigLoader implements ILoader
         if ($user !== null) {
             $environment->addGlobal('user', User::where(['id' => $user['user_id']])->get());
         }
+        $environment->addGlobal('appUri', $this->appUri);
         View::setEnvironment($environment);
     }
 }

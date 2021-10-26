@@ -10,7 +10,7 @@
     {% if session.message is not null %}
         <div class="alert alert-danger">{{ session.message }}</div>
     {% endif %}
-    <form action="/tasks/create" method="post">
+    <form action="{{ appUri }}tasks/create" method="post">
         <div class="mb3">
             <label for="username" class="form-label">Пользователь</label>
             <input type="text" class="form-control" id="username" name="username">
