@@ -10,7 +10,7 @@
     {% if session.message is not null %}
     <div class="alert alert-danger">{{ session.message }}</div>
     {% endif %}
-    <form action="/tasks/update/{{ model.getVar('id') }}" method="post">
+    <form action="{{ appUri }}tasks/update/{{ model.getVar('id') }}" method="post">
         <div class="mb-3">
             <div class="form-floating">
                 <textarea class="form-control" name="text" id="text">{{ model.getVar('text') }}</textarea>

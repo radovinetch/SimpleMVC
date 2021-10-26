@@ -3,10 +3,6 @@
 use SimpleMvc\middleware\AdminMiddleware;
 use SimpleMvc\middleware\AuthMiddleware;
 use SimpleMvc\routing\Routing;
-use SimpleMvc\Framework;
-
-$framework = new Framework();
-$framework->start();
 
 Routing::get('/', 'TaskController@index');
 Routing::get('/tasks', 'TaskController@index');

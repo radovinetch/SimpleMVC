@@ -5,6 +5,7 @@ namespace SimpleMvc\http;
 
 
 use SimpleMvc\exception\SortingException;
+use SimpleMvc\Framework;
 use SimpleORM\model\Model;
 
 class Response
@@ -41,7 +42,8 @@ class Response
 
     public function redirect($url): void
     {
-        header('Location: ' . $url);
+        $url = trim('/', $url);
+        header('Location: ' . Framework::getInstance()->getAppUri() . $url);
     }
 
     public function back(): void
